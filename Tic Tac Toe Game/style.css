@@ -1,0 +1,197 @@
+:root {
+  /* Background color for the body */
+  --background-color: #f0f0f0; /* Light Gray */
+
+  /* Background color for the game box */
+  --game-box-background-color: #ff6f61; /* Vibrant Coral */
+
+  /* Colors for the X and O marks */
+  --x-color: #ff3b30; /* Bright Red */
+  --o-color: #4cd964; /* Bright Green */
+
+  /* Hover and active cell color */
+  --hover-color: #ffcc00; /* Bright Yellow */
+  --active-color: #ff9800; /* Bright Orange */
+
+  /* Winning line color (not used for lines, but can be used for highlighting winning cells) */
+  --winning-color: #8e44ad; /* Bright Purple */
+
+  /* Text color */
+  --text-color: #333333; /* Dark Gray */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px; /* Adjust this margin to control the space between the msg-container and main */
+}
+
+.gamebox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--game-box-background-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s;
+  border-radius: 0.75rem;
+  color: rgb(197, 19, 19);
+}
+
+.box:hover {
+  background-color: rgb(148, 143, 143);
+}
+
+.box:active {
+  background-color: #e03627;
+}
+
+#resetBtn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--x-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#resetBtn:hover {
+  background-color: #e03627;
+}
+
+#newBtn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--x-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#newBtn:hover {
+  background-color: #e03627;
+}
+
+p {
+  color: black;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.msg-container {
+  padding: 15px;
+  background-color: #ff6f61; /* Vibrant Coral */
+  color: white;
+  border-radius: 10px;
+  display: none; 
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px; /* Set a maximum width */
+  margin: 20px auto; /* Center horizontally with margin */
+  text-align: center;
+}
+
+.msg-container p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+#newBtn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--x-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#newBtn:hover {
+  background-color: #e03627;
+}
+
+@media screen and (max-width: 600px) {
+  .gamebox {
+    padding: 10px;
+  }
+
+  .box {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  #resetBtn,
+  #newBtn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .gamebox {
+    padding: 5px;
+  }
+
+  .box {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  #resetBtn,
+  #newBtn {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+  }
+}
